@@ -107,5 +107,5 @@ A problem is first due for review 7 days after it's added. Each successful revie
 
 ## Issues Encountered & Resolutions
 
-See [CHANGELOG.md](/code_recall/CHANGELOG.md) for a breakdown of bugs hit during development and how they were resolved.
+See [CHANGELOG.md](/CHANGELOG.md) for a breakdown of bugs hit during development and how they were resolved.
 
