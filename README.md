@@ -30,9 +30,9 @@ python app.py   # runs the Flask API on http://127.0.0.1:5000
 ### CLI
 
 ```bash
-python main.py add         # add a new problem from a .md file
-python main.py due         # list problems due for review today
-python main.py review ""   # mark a problem as reviewed
+python main.py add filepath     # add a new problem from a .md file
+python main.py due              # list problems due for review today
+python main.py review <title>   # mark a problem as reviewed
 ```
 
 Run `python main.py -h` for full help.
@@ -63,28 +63,30 @@ Looks up the problem by title, logs the review timestamp, advances it to the nex
 ## Spaced Repetition Schedule
 Repetition Schedule is as follows:
 
-| Stage  | Days until next review         | 
-|--------|--------------------------------|
-|   0    |       7                        |
-|   1    |       28                       |
-|   2    |       60                       |
-|   3    |       180 (capped)             |
+| Stage  | Days until next review  | 
+|--------|-------------------------|
+|   0    |       7                 |
+|   1    |       28                |
+|   2    |       60                |
+|   3    |       180 (capped)      |
 
 
 A problem is first due for review 7 days after it's added. Each successful review advances it to the next stage and a longer interval, capping at 180 days.
 
 
 # Project Structure
-code_recall/
-├── config.py       — stage intervals, single source of truth
-├── database.py     — schema, constraints, initialization
-├── add_problem.py  — insert with duplicate protection
-├── due_today.py    — query due problems
-├── review.py       — spaced repetition logic
-├── parser.py       — markdown file parser
-├── main.py         — CLI entry point
-├── app.py          - Flask API entry point
-├── two_sum.md      — markdown file for adding a problem (example file)
+
+| Script                | Description                               |
+|-----------------------|-------------------------------------------|
+| config.py             | stage intervals, single source of truth   |
+| database.py           | schema, constraints, initialization       |
+| add_problem.py        | insert with duplicate protection          |
+| due_today.py          | query due problems                        |
+| review.py             | spaced repetition logic                   |
+| parser.py             | markdown file parser                      |
+| main.py               | CLI entry point                           |
+| app.py                | Flask API entry point                     |
+| two_sum.md            | markdown file for adding a problem        |
 
 
 ## API Routes
