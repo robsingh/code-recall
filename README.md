@@ -40,7 +40,7 @@ Run `python main.py -h` for full help.
 
 ### Adding a problem
 
-Problems are added via a markdown file — see [`two_sum.md`](/code_recall/two_sum.md) for the expected format. Include a `title`, `notes`, a `## Problem` section, and a `## Solution` section. The parser reads this file and inserts it into the database.
+Problems are added via a markdown file — see [`two_sum.md`](two_sum.md) for the expected format. Include a `title`, `notes`, a `## Problem` section, and a `## Solution` section. The parser reads this file and inserts it into the database.
 
 
 ### Checking due problems
