@@ -1,9 +1,11 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 from add_problem import adding_problem
 from due_today import show_due_today
 from review import mark_reviewed
 
 app = Flask(__name__)
+CORS(app, origins=["http://localhost:5173"])
 
 @app.route("/problems",methods=["POST"])
 def app_problem_route():
